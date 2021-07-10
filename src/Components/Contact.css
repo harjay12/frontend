@@ -1,0 +1,171 @@
+.map-l {
+	width: 100%;
+	height: 80vh;
+	top: 0;
+}
+.text {
+	color: #f2f2f2;
+	font-size: 15px;
+	/* padding: 8px 12px; */
+	position: absolute;
+	/* top: 8px; */
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
+.sidebar {
+	background-color: rgba(35, 55, 75, 0.9);
+	color: #ffffff;
+	padding: 6px 12px;
+	font-family: monospace;
+	z-index: 1;
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	margin: 12px;
+	border-radius: 4px;
+}
+
+.MsgContainer {
+	width: 400px;
+	height: 100%;
+	float: right;
+	margin: 50px;
+	border: 1px solid black;
+}
+
+.formInput {
+	color: black;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 20px;
+	border: none;
+}
+.TextContainer {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 500px;
+	margin: 100px;
+}
+/* 
+input,
+textarea {
+	width: 100%;
+	margin-top: 2em;
+	border: none;
+	border-bottom: 1px solid black;
+} */
+
+.error {
+	color: #960303;
+}
+
+.success {
+	color: #0ff40f;
+}
+
+.formWapper {
+	margin-top: 50px;
+	/* margin-left: auto;
+	margin-right: auto; */
+	/* width: 400px; */
+
+	/* background-color: aqua; */
+	/* text-align: center; */
+}
+
+input {
+	margin: 5px;
+	height: 20px;
+	width: 450px;
+	border: none;
+	border-bottom: solid 1px blue;
+	border-radius: 5px;
+	outline: none;
+}
+label {
+	display: block;
+	/* margin: 2px 3px; */
+}
+.required-field::after {
+	content: '*';
+	color: red;
+}
+.btn {
+	background-color: rgb(9, 83, 61);
+	height: 25px;
+	width: 100px;
+	color: white;
+	font: italic;
+	border: none;
+	border-radius: 5px;
+}
+
+textarea {
+	margin: 10px;
+	height: 100px;
+	width: 450px;
+	border: none;
+	border-bottom: solid 1px blue;
+	border-radius: 5px;
+	outline: none;
+}
+
+.btn:hover {
+	background-color: red;
+	cursor: pointer;
+}
+
+.style {
+	padding-top: 15px;
+}
+.sentmsg1 {
+	color: green;
+}
+.sentmsg2 {
+	color: red;
+}
+
+.dot-pulse {
+	position: relative;
+	left: -9999px;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: #9880ff;
+	color: #9880ff;
+	box-shadow: 9999px 0 0 -5px #9880ff;
+	animation: dotPulse 1.5s infinite linear;
+	animation-delay: 0.25s;
+}
+
+.appendMovingDots:after {
+	content: ' .';
+	animation: dots 3s steps(1, end) infinite;
+}
+@keyframes dots {
+	0%,
+	12.5% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	37.5% {
+		text-shadow: 0.5em 0;
+	}
+	50% {
+		text-shadow: 0.5em 0, 1em 0;
+	}
+	62.5% {
+		text-shadow: 0.5em 0, 1em 0, 1.5em 0;
+	}
+	75% {
+		text-shadow: 0.5em 0, 1em 0, 1.5em 0, 2em 0;
+	}
+	87.5%,
+	100% {
+		text-shadow: 0.5em 0, 1em 0, 1.5em 0, 2em 0, 2.5em;
+	}
+}
