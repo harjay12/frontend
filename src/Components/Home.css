@@ -1,14 +1,6 @@
-.h-container {
-	position: relative;
-	/* width: 100%;  */
-	height: 70vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.image {
-	/* width: 1000px;
-    height: 600px; */
+/* .image {
+	width: 10px;
+	height: 60px;
 	border-radius: 10px;
 }
 .right-arrow {
@@ -61,19 +53,20 @@
 
 .slidert {
 	display: inline-block;
-	width: 100%;
-	height: 90vh;
+	width: 50%;
+	height: 500px;
 	border-radius: 10px;
 }
 
 /* Buttons */
 
-.slideshowDots {
-	text-align: center;
+/* .slideshowDots {
+	text-align: right;
+	display: block;
+	float: right;
 }
 
 .slideshowDot {
-	display: inline-block;
 	height: 20px;
 	width: 20px;
 	border-radius: 50%;
@@ -86,4 +79,43 @@
 
 .slideshowDot.active {
 	background-color: #6a0dad;
+}
+
+@media only screen and (max-width: 1020px) {
+} */
+
+.containerI {
+	margin: 0 auto;
+	text-align: center;
+	width: 85%;
+	height: 1000px;
+	border: 2px solid black;
+	background-color: #f8f8f8;
+}
+
+.imageContainer {
+	width: 500px;
+	height: 300px;
+	background-position: top left;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: background-image 0.2s ease-in-out;
+	float: right;
+}
+
+.controls {
+	position: relative;
+	top: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.controls__button {
+	background-color: rgb(248, 248, 248);
+	border: none;
+	border-radius: 15px;
+	padding: 15px;
+	margin: 0 10px;
+	cursor: pointer;
 }

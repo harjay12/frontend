@@ -57,7 +57,7 @@ function Footer() {
 					<p
 						style={{
 							textAlign: 'center',
-							marginBottom: '10px',
+							marginBottom: '50px',
 							marginTop: '-10px',
 							fontFamily: 'italic',
 						}}>

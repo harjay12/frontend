@@ -1,13 +1,21 @@
 import './NavbarPilot.css';
 import React from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { BsList, BsXCircle } from 'react-icons/bs';
+// import { AiOutlineMenu } from 'react-icons/ai';
+import { Row, Col } from 'react-bootstrap';
 
 function NavbarPilot() {
-	const [clicked, setClicked] = React.useState(true);
+	const [clicked, setClicked] = React.useState(false);
+	const [topMenu, setTopMenu] = React.useState(true);
 	const handleClick = () => {
 		setClicked(!clicked);
-		console.log('bottun cliecked');
 	};
+	const handleTopMenu = () => {
+		setTopMenu(!topMenu);
+		console.log('bottun cliecked is :', topMenu);
+	};
+
+	console.log('bottun cliecked is :', clicked);
 
 	return (
 		<section className='navigation'>
@@ -18,7 +26,10 @@ function NavbarPilot() {
 							Question?Call:
 							<a href='#Question?Call'> 555-555-5555</a>
 						</h6>
-						<AiOutlineMenu className='topmenu' />
+						<BsList
+							onClick={handleTopMenu}
+							className={topMenu ? ' topmenu' : 'topmenuOff'}
+						/>
 
 						<div
 							className='empinfo'
@@ -27,46 +38,60 @@ function NavbarPilot() {
 						</div>
 					</div>
 					<hr color='#ababab' />
-					<div className='brand'>
-						<a href='/'>
-							<img className='img' src='/assets/logo1.png' alt='logo1'></img>
-						</a>
-					</div>
-					<div className='container'>
-						<nav className='nav'>
-							<div onClick={handleClick}>
-								<AiOutlineMenu className={clicked ? 'Aimenu' : 'close'} />
+					<Row>
+						<Col>
+							<div className='brand'>
+								<a href='/'>
+									<img
+										className='img'
+										src='/assets/logo1.png'
+										alt='logo1'></img>
+								</a>
 							</div>
+						</Col>
 
-							<ul className={clicked ? 'nav' : 'navOn'}>
-								<li className='nav-item'>
-									<a className='nav-link active' href='/'>
-										Home
-									</a>
-								</li>
-								<li className='nav-item'>
-									<a className='nav-link active' href='/Services'>
-										Our Services
-									</a>
-								</li>
-								<li className='nav-item'>
-									<a className='nav-link active' href='/About'>
-										About Us
-									</a>
-								</li>
-								<li className='nav-item'>
-									<a className='nav-link active' href='/Careers'>
-										Career Opportunities
-									</a>
-								</li>
-								<li className='nav-item'>
-									<a className='nav-link active' href='/Contact'>
-										Contact Us
-									</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
+						<Col>
+							<nav className='nav'>
+								<div onClick={handleClick}>
+									<BsList className={clicked ? ' barmenuOff' : 'barmenu'} />
+								</div>
+								{/*
+							className={clicked ? 'barmenuOff' : 'navOn'}
+							
+							*/}
+
+								<ul className={clicked ? 'navOn' : 'barmenuOff'}>
+									<BsXCircle className='xicon' onClick={handleClick} />
+
+									<li className='nav-item'>
+										<a className='nav-link active' href='/'>
+											Home
+										</a>
+									</li>
+									<li className='nav-item'>
+										<a className='nav-link active' href='/Services'>
+											Our Services
+										</a>
+									</li>
+									<li className='nav-item'>
+										<a className='nav-link active' href='/About'>
+											About Us
+										</a>
+									</li>
+									<li className='nav-item'>
+										<a className='nav-link active' href='/Careers'>
+											Career Opportunities
+										</a>
+									</li>
+									<li className='nav-item'>
+										<a className='nav-link active' href='/Contact'>
+											Contact Us
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</Col>
+					</Row>
 				</div>
 			</div>
 		</section>
