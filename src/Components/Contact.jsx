@@ -1,7 +1,7 @@
 import './Contact.css';
 import React from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import Mapboxdirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+// import Mapboxdirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import axios from 'axios';
 
 export default function Home() {
@@ -56,14 +56,6 @@ export default function Home() {
 			zoom: 9,
 		});
 		map.current.scrollZoom.disable();
-		map.current.addControl(
-			new Mapboxdirections({
-				accessToken: mapboxgl.accessToken,
-				mapboxgl: mapboxgl,
-			}),
-			'bottom-right'
-		);
-		map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
 		// clean up on unmount
 		return () => map.current.remove();
@@ -71,19 +63,15 @@ export default function Home() {
 	}, []);
 
 	return (
-		<div>
-			<div ref={mapContainer} className='map-l'></div>
-			<div className='container colRow'>
+		<div className='containerWap'>
+			<h1>CONTACT INFO </h1>
+			<div className=' colRow'>
 				<div className='info'>
-					<h1>CONTACT INFO </h1>
-
-					<h4>Address </h4>
+					<h4>Fortunate Health Care Services</h4>
 					<h6>7 Laurel Woods Dr. Berlin NJ 08009</h6>
 
-					<h4>Phone Number:</h4>
-					<h6>218-573-2238 </h6>
+					<h4>Phone: 218-573-2238</h4>
 
-					<h4>Email:</h4>
 					<a href='mailto: fortunate@fortunatehhcs.com'>
 						fortunate@fortunatehhcs.com
 					</a>
@@ -93,46 +81,42 @@ export default function Home() {
 						https://www.facebook.com/fortunateHHCS
 					</a>
 				</div>
-
-				<div className='formCont'>
-					<form onSubmit={handleSubmit}>
-						<h1>CONTACT Us </h1>
-						<div
-							style={{
-								position: 'absolute',
-								marginBottom: '10px',
-								marginLeft: '120px',
-							}}>
-							{sent}
-						</div>
-
-						<label className='style' style={{ marginTop: '15px' }}>
-							Full name <span class='required-field'></span>
-						</label>
-						<input
-							id='name'
-							required
-							type='text'
-							placeholder='Your full name'
-						/>
-						<label className='style'>Email</label>
-						<input id='email' required type='email' placeholder='Your email' />
-						<label className='style'>Subject</label>
-						<input id='subject' type='text' placeholder='Optional' />
-						<label className='style'>Message</label>
-						<textarea
-							id='message'
-							type='text'
-							required
-							placeholder="what's on you mind"
-						/>
-						<label />
-						<button type='submit' className='btn'>
-							{status}
-						</button>
-					</form>
-				</div>
 			</div>
+
+			<div className='formCont'>
+				<form onSubmit={handleSubmit}>
+					<div
+						style={{
+							position: 'absolute',
+							marginBottom: '10px',
+							marginLeft: '120px',
+						}}>
+						{sent}
+					</div>
+
+					<label className='style' style={{ marginTop: '15px' }}>
+						Full name <span class='required-field'></span>
+					</label>
+					<input id='name' required type='text' placeholder='Your full name' />
+					<label className='style'>Email</label>
+					<input id='email' required type='email' placeholder='Your email' />
+					<label className='style'>Subject</label>
+					<input id='subject' type='text' placeholder='Optional' />
+					<label className='style'>Message</label>
+					<textarea
+						id='message'
+						type='text'
+						required
+						placeholder="what's on you mind"
+					/>
+					<label />
+					<button type='submit' className='btn'>
+						{status}
+					</button>
+				</form>
+			</div>
+
+			<div ref={mapContainer} className='map-l'></div>
 		</div>
 	);
 }
